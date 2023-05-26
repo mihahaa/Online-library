@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main-reader">Bibl.io</a>
+      </div>
+</nav>
+
+<div class="d-flex justify-content-center">
+    <form>
+      <br/>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Naziv" name="naziv" [(ngModel)]="naziv" required>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Izdavac" name="izdavac" [(ngModel)]="izdavac" required>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Autori" name="autori" [(ngModel)]="autori" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Jezik" name="jezik" [(ngModel)]="jezik" required>
+            </div>
+          </div>
+          <br/>
+        <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Godina Izdanja" name="godina" [(ngModel)]="godina" required>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Zanrovi" name="zanrovi" [(ngModel)]="zanrovi" required>
+              </div>
+          </div>
+          <br/>
+          <div class="row">
+                        <div class="col">
+              <label class="input-group-text" for="inputGroupFile01">Unesite sliku</label>
+              <input type="file" class="form-control" id="inputGroupFile01" (input)="onFileChanged($event)"  accept=".jpg,.png">
+              </div>
+            </div>
+          
+          <br/>
+          <div class="single">
+            <button class="btn btn-primary" (click)="addbook()">Dodaj</button>
+          </div>
+          
+      </form>
+</div>
+<br/>
+<br/>
+<div class="single">
+<div *ngIf="message=='Vas zahtev je prihvacen'" [class.green]="true">{{message}}</div>
+<div *ngIf="message!='Vas zahtev je prihvacen'" [class.red]="true">{{message}}</div>
+</div>

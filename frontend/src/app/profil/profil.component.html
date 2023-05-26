@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='reader'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main-reader">Bibl.io</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='moderator'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main-moderator">Bibl.io</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='admin'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="admin">Bibl.io</a>
+    </div>
+</nav>
+  <div  *ngIf="nes" [style.margin-top.px]="40"  [class.center]="true">
+    <img [src]=nes alt="korisnik" style="height:200px">
+</div>
+<div *ngIf="!nes" [style.margin-top.px]="40"  [class.center]="true">
+    <img src="/assets/korisnik.jpg" alt="korisnik" style="height:200px">
+</div>
+<form>
+    <div class="form-group col-md-3" >
+      <label for="un">Korisnicko ime:</label>
+      <h3 id="un">{{username}}</h3>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="ime">Ime:</label>
+      <input type="text" class="form-control" name="imee" id="ime" [placeholder]="ime" [(ngModel)]="imee" *ngIf="status!='blokiran'">
+      <h3 id="ime" *ngIf="status=='blokiran'">{{ime}}</h3>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="prezime">Prezime</label>
+        <input type="text" class="form-control" name="prezimee" id="prezime" [placeholder]="prezime" [(ngModel)]="prezimee"*ngIf="status!='blokiran'">
+        <h3 id="prezime" *ngIf="status=='blokiran'">{{prezime}}</h3>
+      </div>
+    <div class="form-group col-md-3">
+        <label for="email">E-mail</label>
+        <input type="text" class="form-control" name="emaill" id="email" [placeholder]="email" [(ngModel)]="emaill" *ngIf="status!='blokiran'"> 
+        <h3 id="email" *ngIf="status=='blokiran'">{{email}}</h3>
+      </div>
+    <div class="form-group col-md-3">
+        <label for="telefon">Telefon</label>
+        <input type="text" class="form-control" name="telefonn" id="telefon" [placeholder]="telefon" [(ngModel)]="telefonn" *ngIf="status!='blokiran'">
+        <h3 id="telefon" *ngIf="status=='blokiran'">{{telefon}}</h3>
+      </div>
+    <div class="form-group col-md-3">
+        <label for="adresa">Adresa:</label>
+        <input type="text" class="form-control" id="adresa" name="adresaa" [placeholder]="adresa" [(ngModel)]="adresaa" *ngIf="status!='blokiran'" (keyup)="checkaddr()">
+        <div [class.red]="true">{{addrm}}</div>
+        <h3 id="telefon" *ngIf="status=='blokiran'">{{adresa}}</h3>
+      </div>
+      <br/>
+    <div class="input-group mb-3 col-md-3" *ngIf="status!='blokiran'">
+        <label class="input-group-text" for="inputGroupFile01">Unesite sliku</label>
+        <input type="file" class="form-control" id="inputGroupFile01" (input)="onFileChanged($event)"  accept=".jpg,.png">
+      </div>
+    <button class="btn btn-primary" *ngIf="status!='blokiran'" (click)="update()">Izmenite podatke</button>
+  </form>
+  {{message}}
+  <br/>
+          <br/>
+  <ngx-charts-bar-vertical 
+              [view]="[1100,400]"
+              [results]="sd"
+              [legendTitle]="'Procitane knjige - zanrovi'"
+              [xAxisLabel]="'Zanrovi'"
+              [yAxisLabel]="'Broj knjiga'"
+              [legend]="true"
+              [showXAxisLabel]="true"
+              [showYAxisLabel]="true"
+              [xAxis]="true"
+              [yAxis]="true"
+              [gradient]="true">
+          </ngx-charts-bar-vertical>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <ngx-charts-bar-vertical 
+              [view]="[1100,400]"
+              [results]="sd1"
+              [legendTitle]="'Procitane knjige - meseci'"
+              [xAxisLabel]="'Meseci'"
+              [yAxisLabel]="'Broj knjiga'"
+              [legend]="true"
+              [showXAxisLabel]="true"
+              [showYAxisLabel]="true"
+              [xAxis]="true"
+              [yAxis]="true"
+              [gradient]="true">
+          </ngx-charts-bar-vertical>

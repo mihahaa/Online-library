@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='moderator'">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main-moderator">Bibl.io</a>
+      </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='admin'">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="admin">Bibl.io</a>
+      </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='reader'">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main-reader">Bibl.io</a>
+      </div>
+  </nav>
+<div class="single">
+    <br/>
+<h3>Trenutna zaduzenja</h3>
+<div *ngIf="allbrrwsn.length==0">
+  <h4 [class.tackice]="true">
+    Nemate aktivnih zaduzenja</h4>
+</div>
+<table *ngFor="let a of allbrrwsn">
+    <tr>
+        <br/>
+    <div class="card" style="width: 18rem;">
+        <br/>
+        <div class="single">
+        <img [src]=a.url alt="knjiga" style="height:200px; width:100px">
+        
+        <div class="card-body">
+            <div class="single">
+          <h3>{{a.naziv}}</h3>
+          <h4>{{a.autori}}</h4>
+          <p class="card-text" *ngIf="a.brojdana>=0"><span style="color:red"><i>Rok za vracanje je istekao pre {{a.brojdana}}</i></span></p>
+          <p class="card-text" *ngIf="a.brojdana<0"><span style="color:green">Ostalo vam je jos {{-a.brojdana}} da vratite knjigu</span></p>        
+        </div><div>
+        <button class="btn btn-light" (click)="details(a.id)">Detalji</button>  
+        <button class="btn btn-light" (click)="returnn(a.stanje,a.id)">Razduzi</button>  
+        <button class="btn btn-light" disabled *ngIf="a.produzio || status=='blokiran'">Produzi</button>
+        <button class="btn btn-light" *ngIf="!a.produzio && status!='blokiran'" (click)="extend(a.username,a.datumv,a.id)">Produzi</button>
+        </div>
+    </div>
+      </div>
+    </div>
+    </tr>
+    </table>
+</div>

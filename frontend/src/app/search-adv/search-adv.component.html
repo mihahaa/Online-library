@@ -1,0 +1,223 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='reader'">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main-reader">Bibl.io</a>
+      </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='moderator'">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main-moderator">Bibl.io</a>
+      </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='admin'">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="admin">Bibl.io</a>
+      </div>
+  </nav>
+  <div class="d-flex justify-content-center">
+    <form> <br/>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Pretrazite naziv" name="naziv" [(ngModel)]="naziv">
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Pretrazite autora" name="autori" [(ngModel)]="autori">
+          </div>
+        </div>
+        <br/>
+        <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary" (click)="search()">Pretraga</button>
+            </div>
+          </div>
+          <br/>
+          <h4 [class.single]="true">Izaberite zanr</h4>
+          <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="dodaj('drama')">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Drama
+                    </label>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="dodaj('klasika')">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Klasika
+                    </label>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="dodaj('akcija')">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Akcija
+                    </label>
+                  </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="dodaj('humor')">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Humor
+                        </label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="dodaj('fantazija')">
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Fantazija
+                        </label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="dodaj('triler')">
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Triler
+                        </label>
+                      </div>
+                </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="dodaj('romansa')">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Romansa
+                    </label>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="dodaj('poezija')">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Poezija
+                    </label>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="dodaj('edukacija')">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Edukacija
+                    </label>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="dodaj('horor')">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Horor
+                    </label>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="dodaj('fikcija')">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Fikcija
+                    </label>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="dodaj('istorija')">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Istorija
+                    </label>
+                  </div>
+            </div>
+        </div>
+        <br/>
+          <h4 [class.single]="true">Izaberite raspon godina</h4>
+          <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Godina pocetka" name="pocgod" [(ngModel)]="pocgod">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Godina kraja" name="krajgod" [(ngModel)]="krajgod">
+            </div>
+        </div>
+        <br/>
+          <h4 [class.single]="true">Izaberite izdavaca</h4>
+          <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Izdavac" name="izdavac" [(ngModel)]="izdavac">
+            </div>
+        </div>
+          <br/>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary" (click)="searchadv()">Napredna pretraga</button>
+            </div>
+          <br/>
+          <br/>
+          <div *ngIf="knjige.length==0">
+            <h4 [class.tackice]="true">
+              &nbsp;  Trazene knjige nema u biblioteci &nbsp;</h4>
+          </div>
+          <div *ngIf="knjige.length>0">
+          <div *ngFor="let k of knjige">
+            <div class="single">
+              <table>
+                <tr>
+              <div class="row text-center">
+                <div class="col-md-6">
+                  <div  *ngIf="k.url">
+                    <img (click)="idi(k.id)" [src]=k.url alt="knjiga" style="height:200px; width:100px">
+                </div>
+                <div *ngIf="!k.url">
+                    <img (click)="idi(k.id)" src="/assets/knjiga.jpg" alt="knjiga" style="height:200px; width:100px">
+                </div>
+                </div>
+                  <div class="col-md-6 text-left">
+                    Naziv knjige:<br/>{{k.naziv}}
+                    <br/>
+                    <br/>
+                    Autori knjige:
+                    <br/>{{k.autori}}
+                    <br/>
+          <br/>
+          Ocena:
+          <br/>
+          <span class="fa fa-star" *ngIf="k.ocena>0" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=0"></span>
+          <span class="fa fa-star" *ngIf="k.ocena>1" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=1"></span>
+          <span class="fa fa-star" *ngIf="k.ocena>2" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=2"></span>
+          <span class="fa fa-star" *ngIf="k.ocena>3" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=3"></span>
+          <span class="fa fa-star" *ngIf="k.ocena>4" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=4"></span>
+          <br/>
+          <span class="fa fa-star" *ngIf="k.ocena>5" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=5"></span>
+          <span class="fa fa-star" *ngIf="k.ocena>6" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=6"></span>
+          <span class="fa fa-star" *ngIf="k.ocena>7" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=7"></span>
+          <span class="fa fa-star" *ngIf="k.ocena>8" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=8"></span>
+          <span class="fa fa-star" *ngIf="k.ocena>9" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="k.ocena<=9"></span>
+                  </div>
+              </div>
+            </tr>
+            <br/>
+            </table>
+            </div>
+          </div>
+        </div>
+    </form>
+    
+</div>

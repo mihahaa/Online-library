@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "6310d0c4b44c2f20f912d2c2"
+  },
+  "adresa": "adminova",
+  "email": "adminov",
+  "ime": "Admin",
+  "lozinka": "admin123",
+  "prezime": "Adminic",
+  "status": "odobren",
+  "telefon": "123456789",
+  "tip": "admin",
+  "zaduzeno": 0,
+  "username": "admin",
+  "slika": ""
+},{
+  "_id": {
+    "$oid": "6328e4f13724c9e9319b5be5"
+  },
+  "ime": "Mihailo",
+  "prezime": "Aleksic",
+  "username": "miha",
+  "lozinka": "miha",
+  "tip": "citalac",
+  "adresa": "Mihina 123, bb",
+  "email": "@@",
+  "slika": "c56b4f013fd97c034f3a12bcf6589d10",
+  "status": "odobren",
+  "telefon": "064",
+  "zaduzeno": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328e6a63724c9e9319b5c1e"
+  },
+  "ime": "Jovana",
+  "prezime": "Jovanic",
+  "username": "joka",
+  "lozinka": "joka",
+  "tip": "moderator",
+  "adresa": "Jokina 14, bb",
+  "email": "jokin",
+  "slika": "",
+  "status": "odobren",
+  "telefon": "987654321",
+  "zaduzeno": 2,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6329841062be44f06f6fbbc6"
+  },
+  "ime": "Test",
+  "prezime": "Testic",
+  "username": "test",
+  "lozinka": "Testov01!",
+  "tip": "citalac",
+  "adresa": "Tt 15, bb",
+  "email": "tt",
+  "slika": "",
+  "status": "novi",
+  "telefon": "1510",
+  "zaduzeno": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632984a762be44f06f6fbbd7"
+  },
+  "ime": "Miki",
+  "prezime": "Milan",
+  "username": "miki",
+  "lozinka": "Mikijev01!",
+  "tip": "citalac",
+  "adresa": "Mikijeva 1, Mikijevo",
+  "email": "mikiiii",
+  "slika": "f753f27f37fb72c5633fcf9cbf540b9a",
+  "status": "odobren",
+  "telefon": "21",
+  "zaduzeno": 0,
+  "__v": 0
+}]

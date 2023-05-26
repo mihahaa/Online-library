@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='moderator'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main-moderator">Bibl.io</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='admin'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="admin">Bibl.io</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='reader'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main-reader">Bibl.io</a>
+    </div>
+</nav>
+<br/>
+<div class="single">
+    <h3>Istorija svih zaduzivanja</h3>
+    <br/>
+    <div *ngIf="allbrrwsn.length==0">
+      <h4 [class.tackice]="true">
+        Niste do sad zaduzivali knjige</h4>
+    </div>
+</div>
+    <div class="single">
+    <div *ngIf="allbrrwsn.length>0">
+    <div class="col-md-12">
+        <select class="form-select" aria-label="Default select example" name="pr" [(ngModel)]="sta">
+            <option value="nd">Sortitaj po nazivu-opadajuce</option>
+            <option value="na">Sortitaj po nazivu-rastuce</option>
+            <option value="ad">Sortitaj po autorima-opadajuce</option>
+            <option value="aa">Sortitaj po autorima-rastuce</option>
+            <option value="dud">Sortitaj po datum uzimanja-opadajuce</option>
+            <option value="dua">Sortitaj po datum uzimanja-rastuce</option>
+            <option value="dvd">Sortitaj po datum vracanja-opadajuce</option>
+            <option value="dva">Sortitaj po datum vracanja-rastuce</option>
+          </select>
+        </div>
+        <div>
+            <br/>
+        <div class="single"><button class="btn btn-primary" (click)="sort()">Sortiraj</button></div>
+</div>
+</div>
+</div>
+<br/>
+<div class="col-md-6 offset-md-3" *ngIf="allbrrwsn.length>0">
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Naziv</th>
+            <th scope="col">Autori</th>
+            <th scope="col">Datum uzimanja</th>
+            <th scope="col">Datum vracanja</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let a of allbrrwsn'>
+            <td>{{a.naziv}}</td>
+            <td>{{a.autori}}</td>
+            <td>{{a.datumu | date:'yyyy/MM/dd'}}</td>
+            <td>{{a.datumv | date:'yyyy/MM/dd'}}</td>
+            <td><button class="btn btn-light" (click)="details(a.id)">Detalji</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

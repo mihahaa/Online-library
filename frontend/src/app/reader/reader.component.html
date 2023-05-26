@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main-reader">Bibl.io</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="profil">Profil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="search-adv" *ngIf="status!='blokiran'">Pretraga knjiga</a>
+            <a class="nav-link active" href="search" *ngIf="status=='blokiran'">Pretraga knjiga</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="newbook-reader" *ngIf="status!='blokiran'">Zahtev za knjigom</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="borrowactive">Trenutna zaduzenja</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="borrow">Istorija zaduzenja</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="single">
+    <h1 class="text-center">Knjiga dana</h1>
+    <div class="row text-center">
+        <div class="col-md-6">
+          <div  *ngIf="nes">
+            <img [src]=nes alt="knjiga" style="height:200px; width:100px">
+        </div>
+        <div *ngIf="!nes">
+            <img src="/assets/knjiga.jpg" alt="knjiga" style="height:200px; width:100px">
+        </div>
+        </div>
+        <div class="col-md-6 text-left">
+          Naziv knjige:<br/>{{naziv}}
+          <br/>
+          <br/>
+          Autori knjige:
+          <br/>{{autori}}
+          <br/>
+          <br/>
+          Ocena:
+          <br/>
+          <span class="fa fa-star" *ngIf="ocena>0" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=0"></span>
+          <span class="fa fa-star" *ngIf="ocena>1" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=1"></span>
+          <span class="fa fa-star" *ngIf="ocena>2" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=2"></span>
+          <span class="fa fa-star" *ngIf="ocena>3" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=3"></span>
+          <span class="fa fa-star" *ngIf="ocena>4" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=4"></span>
+          <br/>
+          <span class="fa fa-star" *ngIf="ocena>5" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=5"></span>
+          <span class="fa fa-star" *ngIf="ocena>6" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=6"></span>
+          <span class="fa fa-star" *ngIf="ocena>7" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=7"></span>
+          <span class="fa fa-star" *ngIf="ocena>8" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=8"></span>
+          <span class="fa fa-star" *ngIf="ocena>9" style="color:orange"></span>
+          <span class="fa fa-star" *ngIf="ocena<=9"></span>
+        </div>
+    </div>
+    <br/>
+    <ul>
+      <li *ngFor="let p of poruke">
+        <div [class.slova]="true" *ngIf="p!='Blokirani ste od strane administratora'">{{p}}</div>
+        <div [class.cslova]="true" *ngIf="p=='Blokirani ste od strane administratora'">{{p}}</div>
+      </li>
+    </ul>
+</div>

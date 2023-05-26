@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='moderator'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main-moderator">Bibl.io</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='admin'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="admin">Bibl.io</a>
+    </div>
+</nav>
+
+<div class="d-flex justify-content-center">
+    <form>
+      <br/>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Naziv" name="naziv" [(ngModel)]="naziv" required>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Izdavac" name="izdavac" [(ngModel)]="izdavac" required>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Autori" name="autori" [(ngModel)]="autori" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Jezik" name="jezik" [(ngModel)]="jezik" required>
+            </div>
+          </div>
+          <br/>
+        <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Godina Izdanja" name="godina" [(ngModel)]="godina" required>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Zanrovi" name="zanrovi" [(ngModel)]="zanrovi" required>
+              </div>
+          </div>
+          <br/>
+          <div class="row">
+                        <div class="col">
+              <label class="input-group-text" for="inputGroupFile01">Unesite sliku</label>
+              <input type="file" class="form-control" id="inputGroupFile01" (input)="onFileChanged($event)"  accept=".jpg,.png">
+              </div>
+            </div>
+          <br/>
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="ubaci" [(ngModel)]="sta" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  Ubaci knjigu direktno
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" [(ngModel)]="sta" value="zatrazi">
+                <label class="form-check-label" for="exampleRadios2">
+                  Zatrazi novu knjigu
+                </label>
+              </div>
+              </div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col">
+              <div class="single">
+              <button class="btn btn-primary" (click)="addbook()">Dodaj</button></div>
+              </div>
+              </div>
+          
+      </form>
+      
+</div>
+<div class="single">
+  <div *ngIf="message!='Sva polja osim slike su obavezna!'" [class.green]="true">{{message}}</div>
+  <div *ngIf="message=='Sva polja osim slike su obavezna!'" [class.red]="true">{{message}}</div>
+  </div>
+

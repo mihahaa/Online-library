@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main-moderator">Bibl.io</a>
+    </div>
+</nav>
+<br/>
+<div class="single"><h3>Svi zahtevi</h3>
+<br/>
+<div *ngIf="allreqsn.length==0">
+  <h4 [class.tackice]="true">
+    Trenutno nema zahteva u bazi</h4>
+</div>
+<div *ngIf="allreqsn.length>0">
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Korisnik</th>
+            <th scope="col">Naziv</th>
+            <th scope="col">Autori</th>
+            <th scope="col">Godina izdavanja</th>
+            <th scope="col">Izdavac</th>
+            <th scope="col">Zanrovi</th>
+            <th scope="col">Jezik</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let a of allreqsn'>
+            <td>{{a.username}}</td>
+            <td>{{a.naziv}}</td>
+            <td>{{a.autori}}</td>
+            <td>{{a.godina}}</td>
+            <td>{{a.izdavac}}</td>
+            <td>{{a.zanrovi}}</td>
+            <td>{{a.jezik}}</td>
+            <td><button class="btn btn-light btn-sm" (click)="approvereq(a.username,a.id)">Odobrite</button></td>
+            <td><button class="btn btn-light btn-sm" (click)="deletereq(a.username,a.id)">Odbijte</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

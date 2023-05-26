@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "6328eae33724c9e9319b5c91"
+  },
+  "datumod": {
+    "$date": {
+      "$numberLong": "1663625955333"
+    }
+  },
+  "datumdo": {
+    "$date": {
+      "$numberLong": "1663671472565"
+    }
+  },
+  "idknjige": 1,
+  "aktivan": false,
+  "produzio": true,
+  "username": "joka",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328ec393724c9e9319b5d12"
+  },
+  "datumod": {
+    "$date": {
+      "$numberLong": "1663626297263"
+    }
+  },
+  "datumdo": {
+    "$date": {
+      "$numberLong": "1664835897263"
+    }
+  },
+  "idknjige": 1,
+  "aktivan": true,
+  "produzio": false,
+  "username": "miha",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328f4ac8a5ce7724bcaa39b"
+  },
+  "datumod": {
+    "$date": {
+      "$numberLong": "1663628460292"
+    }
+  },
+  "datumdo": {
+    "$date": {
+      "$numberLong": "1663628849676"
+    }
+  },
+  "idknjige": 2,
+  "aktivan": false,
+  "produzio": false,
+  "username": "joka",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63299b7862be44f06f6fbca6"
+  },
+  "datumod": {
+    "$date": {
+      "$numberLong": "1663671160151"
+    }
+  },
+  "datumdo": {
+    "$date": {
+      "$numberLong": "1664880760151"
+    }
+  },
+  "idknjige": 0,
+  "aktivan": true,
+  "produzio": false,
+  "username": "joka",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63299b7e62be44f06f6fbcbb"
+  },
+  "datumod": {
+    "$date": {
+      "$numberLong": "1663671166368"
+    }
+  },
+  "datumdo": {
+    "$date": {
+      "$numberLong": "1663671472565"
+    }
+  },
+  "idknjige": 1,
+  "aktivan": false,
+  "produzio": false,
+  "username": "joka",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63299b8462be44f06f6fbcd0"
+  },
+  "datumod": {
+    "$date": {
+      "$numberLong": "1663671172746"
+    }
+  },
+  "datumdo": {
+    "$date": {
+      "$numberLong": "1664016772746"
+    }
+  },
+  "idknjige": 2,
+  "aktivan": true,
+  "produzio": false,
+  "username": "joka",
+  "__v": 0
+}]

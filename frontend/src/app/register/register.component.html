@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje=='admin'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="admin">Bibl.io</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="koje!='admin'">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">Bibl.io</a>
+    </div>
+</nav>
+<form>
+  <br/>
+    <div class="col-md-4">
+      <input type="text" class="form-control" id="username" placeholder="Unesite korisnicko ime" name="username" required [(ngModel)]="username">
+    </div>
+    <br/>
+    <div class="col-md-4">
+        <input type="password" class="form-control" id="password" placeholder="Unesite lozinku" name="password" [(ngModel)]="password" (keyup)="checkpass()" required>
+        <div [class.red]="true">{{passm}}</div>
+      </div>
+      <br/>
+      <div class="col-md-4">
+        <input type="password" class="form-control" required id="password1" placeholder="Potvrdite lozinku" name="password1" [(ngModel)]="password1" (keyup)="samepass()" required>
+        <div [class.red]="true">{{passcm}}</div>
+      </div>
+      <br/>
+    <div class="col-md-4">
+        <input type="text" required class="form-control" id="ime" placeholder="Unesite Vase ime" name="ime" [(ngModel)]="ime">
+      </div>
+      <br/>
+      <div class="col-md-4">
+        <input type="text" class="form-control" id="prezime" required placeholder="Unesite Vase prezime" name="prezime" [(ngModel)]="prezime">
+      </div>
+      <br/>
+      <div class="col-md-4">
+        <input type="text" class="form-control" id="email" placeholder="Unesite Vas email" required name="email" [(ngModel)]="email">
+      </div>
+      <br/>
+      <div class="col-md-4">
+        <input type="text" class="form-control" id="adresa" required placeholder="Unesite Vasu adresu" name="adresa" [(ngModel)]="adresa" (keyup)="checkaddr()">
+        <div [class.red]="true">{{addrm}}</div>
+      </div>
+      <br/>
+      <div class="col-md-4">
+        <input type="text" class="form-control" id="telefon" required placeholder="Unesite Vas broj telefona" name="telefon" [(ngModel)]="telefon">
+      </div>
+      <br/>
+      <div class="col-md-4">
+        <label class="input-group-text" for="inputGroupFile01">Unesite sliku</label>
+        <input type="file" class="form-control" id="inputGroupFile01" (input)="onFileChanged($event)"  accept=".jpg,.png">
+      </div>
+    <button class="btn btn-primary" (click)="register()">Registruj se</button>
+  </form>
+ <div [class.green]="true"> {{message}}</div>
+  <ul>
+    <li *ngFor="let p of poruke">
+      <div [class.red]="true">{{p}}</div>
+    </li>
+  </ul>
+  

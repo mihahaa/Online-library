@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "6328eadc3724c9e9319b5c88"
+  },
+  "username": "joka",
+  "tekst": "paa nije losa",
+  "ocena": 7,
+  "izmenjen": true,
+  "idknjige": 1,
+  "datum": {
+    "$date": {
+      "$numberLong": "1663625948551"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328eefd3724c9e9319b5d65"
+  },
+  "username": "miha",
+  "tekst": "Moram da unesem komentar?!",
+  "ocena": 5,
+  "izmenjen": true,
+  "idknjige": 1,
+  "datum": {
+    "$date": {
+      "$numberLong": "1663627005127"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6329979462be44f06f6fbc1a"
+  },
+  "username": "joka",
+  "tekst": "Dina ko dina",
+  "ocena": 10,
+  "izmenjen": false,
+  "idknjige": 2,
+  "datum": {
+    "$date": {
+      "$numberLong": "1663670164948"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">Bibl.io</a>
+      </div>
+  </nav>
+  <div class="single">
+<form>
+  <br/>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="username" placeholder="Unesite korisnicko ime" name="username" [(ngModel)]="username">
+    </div>
+    <br/>
+    <div class="col-md-12">
+        <input type="password" class="form-control" id="password" placeholder="Unesite lozinku" name="password" [(ngModel)]="password">
+      </div>
+      <br/>
+      <div class="single">
+    <button class="btn btn-primary" (click)="login()">Loginuj se</button>
+  </div>
+  </form>
+</div>
+<div class="single">
+  <div [class.red]="true">{{message}}</div>
+</div>

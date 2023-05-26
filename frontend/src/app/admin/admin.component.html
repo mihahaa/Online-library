@@ -1,0 +1,133 @@
+<br/>
+<div class="single"><h3>Korisnici biblioteke</h3></div>
+    
+    <div class="table-responsive">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Korisnicko ime</th>
+        <th scope="col">Ime</th>
+        <th scope="col">Prezime</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefon</th>
+        <th scope="col">Adresa</th>
+        <th scope="col">Tip</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let k of allusers'>
+        <td>{{k.username}}</td>
+        <td>{{k.ime}}</td>
+        <td>{{k.prezime}}</td>
+        <td>{{k.email}}</td>
+        <td>{{k.telefon}}</td>
+        <td>{{k.adresa}}</td>
+        <td>{{k.tip}}</td>
+        <td>
+          <button class="btn btn-light btn-sm" (click)="updateuser(k.username)" *ngIf="k.username!=username && k.tip=='admin'" disabled>Azurirajte</button>
+          <button class="btn btn-light btn-sm" (click)="updateuser(k.username)" *ngIf="k.username==username || k.tip!='admin'" >Azurirajte</button>
+        </td>
+        <td>
+          <button class="btn btn-light btn-sm" (click)="aproveuser(k.username)" *ngIf="k.status=='novi' && k.tip!='admin'">Odobrite</button>
+          <button class="btn btn-light btn-sm" (click)="aproveuser(k.username)" disabled *ngIf="k.status!='novi' || k.tip=='admin'">Odobrite</button>
+        </td>
+        <td>
+          <button class="btn btn-light btn-sm" (click)="blockuser(k.username)" *ngIf="k.status!='blokiran' && k.tip!='admin'">Blokirajte</button>
+          <button class="btn btn-light btn-sm" (click)="blockuser(k.username)" *ngIf="k.username==username" disabled>Blokirajte</button>
+          <button class="btn btn-light btn-sm" (click)="unblockuser(k.username)" *ngIf="k.status=='blokiran'">Odblokiraj</button>
+        </td>
+        <td>
+          <button class="btn btn-light btn-sm" (click)="upguser(k.username)" *ngIf="k.tip=='citalac'">Unapredite</button>
+          <button class="btn btn-light btn-sm" (click)="upguser(k.username)" *ngIf="k.tip!='citalac'" disabled>Unapredite</button>
+        </td>
+        <td>
+          <button class="btn btn-light btn-sm" *ngIf="k.tip=='moderator'" (click)="dwnguser(k.username)">Unazadite</button>
+          <button class="btn btn-light btn-sm" *ngIf="k.tip!='moderator'" (click)="dwnguser(k.username)" disabled>Unazadite</button>
+        </td>
+        <td>
+          <button *ngIf="k.zaduzeno==0 && k.tip!='admin'" class="btn btn-light btn-sm" (click)="deleteuser(k.username) ">Obrisite</button>
+          <button *ngIf="k.zaduzeno>0 || k.tip=='admin'"class="btn btn-light btn-sm" (click)="deleteuser(k.username)" disabled>Obrisite</button>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+  <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-secondary" (click)="adduser()">Dodajte korisnika</button>
+    </div>
+  </div>
+  <br/>
+  <div class="single"><h3>Knjige u biblioteci</h3></div>
+  <div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Naziv</th>
+        <th scope="col">Autori</th>
+        <th scope="col">Izdavac</th>
+        <th scope="col">Zanrovi</th>
+        <th scope="col">Jezik</th>
+        <th scope="col">Godina</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let k of allbooks'>
+        <td>{{k.naziv}}</td>
+        <td>{{k.autori}}</td>
+        <td>{{k.izdavac}}</td>
+        <td>{{k.zanrovi}}</td>
+        <td>{{k.jezik}}</td>
+        <td>{{k.godina}}</td>
+        <td><button class="btn btn-light btn-sm" (click)="updatebook(k.id)">Azurirajte</button></td>
+        <td>
+          <button class="btn btn-light btn-sm" *ngIf="k.zaduzena==0" (click)="deletebook(k.id)">Obrisite</button>
+          <button class="btn btn-light btn-sm" *ngIf="k.zaduzena>0" (click)="deletebook(k.id)" disabled>Obrisite</button>
+        </td>
+        <td>
+          <button class="btn btn-light btn-sm" (click)="aprovebook(k.id)" *ngIf="k.status=='zatrazena'">Odobrite</button>
+          <button class="btn btn-light btn-sm" (click)="aprovebook(k.id)" *ngIf="k.status=='ubacena'" disabled>Odobrite</button>
+        </td>
+        <td>
+          <button class="btn btn-light btn-sm" (click)="declinebook(k.id)" *ngIf="k.status=='zatrazena'">Odbijte</button>
+          <button class="btn btn-light btn-sm" (click)="declinebook(k.id)" *ngIf="k.status=='ubacena'" disabled>Odbijte</button>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+  <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-secondary" (click)="addbook()">Dodajte knjigu</button>
+    </div>
+  </div>
+  <br/>
+  <div class="single">
+  <h3>Broj dana za zaduzivanje</h3>
+  <div class="row">
+    <div class="col">
+        <input type="text" class="form-control" [placeholder]="zaduzenje" name="pocgod" [(ngModel)]="zaduzenjee">
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-secondary" (click)="updatedays()">Promenite</button>
+    </div>
+</div>
+</div>
+<br/>
+<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center">
+      <button class="btn btn-secondary" (click)="logout()">Odjava</button>
+  </div>
+</div>
+<hr>

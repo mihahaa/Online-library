@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main-moderator">Bibl.io</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="" (click)="obrisi()">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="password" *ngIf="status!='blokiran'">Promenite lozinku</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="moderator">Nazad na posao</a>
+          </li>
+          <li class="nav-item">
+            <img *ngIf="nesp" [src]="nesp" style="height:35px; width:45px" (click)="profile()">
+            <img *ngIf="!nesp" src="/assets/korisnik.jpg" style="height:35px; width:45px" (click)="profile()">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div [class.single]="true" *ngIf="status!='blokiran'">
+    <h2>Top 3 knjige</h2>
+    <br/>
+  <div class="container" style="width:20%; ">
+      <div id="maj" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+              <li data-bs-target="maj" data-bs-slide-to="0" class="active"></li>
+              <li data-bs-target="maj" data-bs-slide-to="1"></li>
+              <li data-bs-target="maj" data-bs-slide-to="2"></li>
+          </ol>
+          
+          <div class="carousel-inner" >
+              <div class="carousel-item active" >
+                  <img [src]="k1" class="d-block;width:20%; " alt="Slide 1" style=" width: 100%; height: auto;">
+              </div>
+              <div class="carousel-item">
+                <img [src]="k2" class="d-block;width:20%; " alt="Slide 2" style=" width: 100%; height: auto;">
+              </div>
+              <div class="carousel-item">
+                <img [src]="k3" class="d-block;width:22%; " alt="Slide 3" style=" width: 100%; height: auto;">
+              </div>
+          </div>
+  
+          <a class="carousel-control-prev" href="#maj" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#maj" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+          </a>
+      </div>
+      </div>
+</div>

@@ -1,0 +1,57 @@
+<div *ngIf="sta=='menjam'">
+    <br/>
+    <div class="single"><h2>Promenite komentar</h2></div>
+<div class="col-md-4 offset-md-4">
+<textarea class="form-control" rows="5" id="comment" [(ngModel)]="tekstt" [placeholder]="tekst" (keyup)="checkcomm()"></textarea>
+<div [class.red]="true">{{porm}}</div>
+<br/>
+<div class="single">
+    <div>
+        <span class="fa fa-star" *ngIf="ocena>0" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=0"></span>
+        <span class="fa fa-star" *ngIf="ocena>1" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=1"></span>
+        <span class="fa fa-star" *ngIf="ocena>2" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=2"></span>
+        <span class="fa fa-star" *ngIf="ocena>3" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=3"></span>
+        <span class="fa fa-star" *ngIf="ocena>4" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=4"></span>
+        <span class="fa fa-star" *ngIf="ocena>5" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=5"></span>
+        <span class="fa fa-star" *ngIf="ocena>6" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=6"></span>
+        <span class="fa fa-star" *ngIf="ocena>7" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=7"></span>
+        <span class="fa fa-star" *ngIf="ocena>8" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=8"></span>
+        <span class="fa fa-star" *ngIf="ocena>9" style="color:orange"></span>
+        <span class="fa fa-star" *ngIf="ocena<=9"></span>
+</div>
+<br/>
+<div class="single">
+<div>    <input type="text" class="form-control" id="username" placeholder="Promenite ocenu" name="username" [(ngModel)]="ocenaa  ">
+</div>
+</div>
+<br/>
+<button class="btn btn-primary btn-sm" (click)="changecomm()">Promenite</button>
+</div>
+</div>
+</div>
+<div *ngIf="sta=='dodajem'">
+    <br/>
+    <div class="single"><h2>Dodajte novi komentar</h2></div>
+<div class="col-md-4 offset-md-4">
+<textarea class="form-control" rows="5" id="comment"  placeholder="Unesite novi komentar" [(ngModel)]="tekstt" (keyup)="checkcomm()">
+    <div [class.red]="true">{{porm}}</div>
+
+</textarea>
+<br/>
+<div class="single">
+        <input type="text" class="form-control" id="username" placeholder="Unesite novu ocenu" name="username" [(ngModel)]="ocenaa">
+
+<br/>
+<div class="single"><button class="btn btn-primary" (click)="addcomm()">Dodajte</button></div>
+<div [class.red]="true">{{poruka}}</div>
+</div>
+</div>

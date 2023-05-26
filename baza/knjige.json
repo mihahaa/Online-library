@@ -1,0 +1,98 @@
+[{
+  "_id": {
+    "$oid": "6328e6473724c9e9319b5c0d"
+  },
+  "autori": "Fjodor Mihailovic Dostojevski",
+  "godina": "2015",
+  "id": 0,
+  "zanrovi": "drama,klasika",
+  "slika": "540668db5c483c07fe9b6753e4524686",
+  "naziv": "Zli dusi I",
+  "izdavac": "Laguna",
+  "jezik": "ruski",
+  "status": "ubacena",
+  "stanje": 1,
+  "ocena": 0,
+  "zaduzena": 2,
+  "popularnost": 2,
+  "ubacena": true,
+  "ko": "miha",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328ea923724c9e9319b5c6b"
+  },
+  "autori": "Dostojevski Mihailovic Fjodor",
+  "godina": "2015",
+  "id": 1,
+  "zanrovi": "drama,klasika",
+  "slika": "8d90b1777a87577b4b8ca170227d4240",
+  "naziv": "Zli dusi II",
+  "izdavac": "Laguna",
+  "jezik": "ruski",
+  "status": "ubacena",
+  "stanje": 1,
+  "ocena": 6,
+  "zaduzena": 2,
+  "ubacena": false,
+  "__v": 0,
+  "popularnost": 4
+},{
+  "_id": {
+    "$oid": "6328eff93724c9e9319b5d92"
+  },
+  "autori": "Herbert Frenk",
+  "godina": "2020",
+  "id": 2,
+  "zanrovi": "akcija,fantazija,fikcija",
+  "slika": "9848f3c7e7f33388e8d9cf4b89f42db5",
+  "naziv": "Dina",
+  "izdavac": "Delfi",
+  "jezik": "francuski,srpski",
+  "status": "ubacena",
+  "stanje": 1,
+  "ocena": 10,
+  "zaduzena": 2,
+  "popularnost": 3,
+  "ubacena": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6329981962be44f06f6fbc77"
+  },
+  "autori": "Ostin Dzejn",
+  "godina": "2010",
+  "id": 3,
+  "zanrovi": "romansa,drama",
+  "slika": "f83ce3c04b5cbd24699dd0b8a7597fe5",
+  "naziv": "Gordost i predrasude",
+  "izdavac": "Vulkan",
+  "jezik": "engleski",
+  "status": "ubacena",
+  "stanje": 3,
+  "ocena": 0,
+  "zaduzena": 0,
+  "popularnost": 0,
+  "ubacena": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63299dab2faf236f94fd5397"
+  },
+  "autori": "asdf",
+  "godina": "20",
+  "id": 4,
+  "zanrovi": "istorija",
+  "slika": "",
+  "naziv": "asdf",
+  "izdavac": "adsf",
+  "jezik": "asdf",
+  "status": "zatrazena",
+  "stanje": 3,
+  "ocena": 0,
+  "zaduzena": 0,
+  "popularnost": 0,
+  "ubacena": false,
+  "ko": "joka",
+  "__v": 0
+}]
